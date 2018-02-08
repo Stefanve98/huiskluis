@@ -8,4 +8,4 @@ Auth::routes();
 
 Route::get('/houses', 'HouseController@index')->name('house.index');
 Route::get('/house/create', 'HouseController@create')->name('house.create');
-Route::get('/house/edit', 'HouseController@edit')->name('house.edit');
+Route::get('/house/{houseId}/edit', 'HouseController@edit')->name('house.edit');

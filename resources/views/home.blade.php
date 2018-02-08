@@ -1,4 +1,10 @@
-@extends('layouts.app')
+@extends('layout.app')
+
+{{--@include('element.breadcrumbs', [--}}
+    {{--'crumbs' => [--}}
+        {{--['name' => 'Klanten']--}}
+    {{--]--}}
+{{--])--}}
 
 @section('content')
 <div class="container">
