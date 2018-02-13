@@ -17,6 +17,8 @@ class CreateHouseTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->integer('address_id');
+            $table->date('owner_from')->nullable();
+            $table->date('owner_until')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

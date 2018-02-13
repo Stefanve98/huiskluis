@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\House\Address;
+use App\Models\House\House;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class HouseController extends BaseController
@@ -13,7 +16,22 @@ class HouseController extends BaseController
      */
     public function index()
     {
-        return view('home');
+        $houses = House::with('address')->get();
+
+        return view('home', [
+            'houses' => $houses
+        ]);
+    }
+
+    /**
+     * @param int $houseId
+     * @return View
+     */
+    public function view(int $houseId)
+    {
+        return view('house.view', [
+            'house' => House::with('address')->findOrFail($houseId)
+        ]);
     }
 
     /**
@@ -25,11 +43,18 @@ class HouseController extends BaseController
     }
 
     /**
+     * @param Request $request
      * @return RedirectResponse
      */
-    public function store()
+    public function store(Request $request)
     {
-        return redirect()->route('house.index');
+        $address = Address::create($request->get('address'));
+        $house = House::create([
+            'user_id' => $request->user()->id,
+            'address_id' => $address->id
+        ]);
+
+        return redirect()->route('house.view', $house->id);
     }
 
     /**
@@ -42,9 +67,11 @@ class HouseController extends BaseController
     }
 
     /**
+     * @param Request $request
+     * @param int $houseId
      * @return RedirectResponse
      */
-    public function update(int $houseId)
+    public function update(Request $request, int $houseId)
     {
         return redirect()->route('house.index');
     }

@@ -13,14 +13,14 @@ class CreateAddressTable extends Migration
      */
     public function up()
     {
-        Schema::create('db_addresses', function (Blueprint $table) {
+        Schema::create('db_house_addresses', function (Blueprint $table) {
             $table->increments('id');
-            $table->smallInteger('type_id');
-            $table->string('country');
-            $table->string('city');
-            $table->string('zip_code');
-            $table->string('street');
-            $table->tinyInteger('number');
+            $table->string('country')->default('NL');
+            $table->string('zip_code')->default(null);
+            $table->string('city')->default(null);
+            $table->string('street')->default(null);
+            $table->tinyInteger('number')->default(null);
+            $table->string('additional')->nullable();
             $table->timestamps();
         });
     }
@@ -32,6 +32,6 @@ class CreateAddressTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('db_addresses');
+        Schema::dropIfExists('db_house_addresses');
     }
 }

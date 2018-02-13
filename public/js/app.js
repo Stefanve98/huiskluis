@@ -13814,7 +13814,7 @@ var app = new Vue({
 /* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
-
+/* WEBPACK VAR INJECTION */(function(global) {
 window._ = __webpack_require__(14);
 window.Popper = __webpack_require__(3).default;
 
@@ -13825,7 +13825,7 @@ window.Popper = __webpack_require__(3).default;
  */
 
 try {
-  window.$ = window.jQuery = __webpack_require__(4);
+  global.$ = global.jQuery = __webpack_require__(4);
 
   __webpack_require__(16);
 } catch (e) {}
@@ -13870,6 +13870,7 @@ if (token) {
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 14 */
