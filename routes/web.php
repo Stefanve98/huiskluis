@@ -15,4 +15,4 @@ Route::post('/house/store', 'HouseController@store')->name('house.store');
 Route::put('/house/update', 'HouseController@create')->name('house.update');
 
 Route::get('/house/{houseId}/rooms/edit', 'RoomController@edit')->name('house.rooms.edit');
-Route::post('/house/{houseId}/rooms/update', 'RoomController@update')->name('house.rooms.update');
+Route::put('/house/{houseId}/rooms/update', 'RoomController@update')->name('house.rooms.update');

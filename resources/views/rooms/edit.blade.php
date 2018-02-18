@@ -16,20 +16,32 @@
 
                     <div class="card-body">
                         {!! BootForm::open()->action(route('house.rooms.update', $house->id))->put() !!}
-                            @foreach($roomTypes as $roomType)
-                            <form class="form-inline">
-                                <div class="form-group">
-                                    <labv jffor="rg-from">Ab: </label>
-                                    <input type="text" id="rg-from" name="rg-from" value="" class="form-control">
+                            @foreach($roomTypes as $key => $roomType)
+                                <div class="form-group row">
+                                    <label class="col-2 col-form-label">{{ $roomType->name }}</label>
+                                    <div class="col-2">
+                                        <input class="form-control roomTypes" type="number"
+                                               {{--name="roomType[{{ $roomType->id }}]"--}}
+                                        >
+                                    </div>
                                 </div>
-                                <!-- rest of form -->
-                            </form>
-{{--                                test {!! Form::number('count', null, ['class' => 'form-control']) !!}--}}
+
+                                <div id="ttttt"></div>
+                                {{--<div class="row">--}}
+                                    {{--<div class="offset-3 col-lg-9 mb-4" id="roomType_{{ $roomType->id }}">--}}
+                                        {{--<input type="text" name="roomType[{{ $roomType->id }}][0][surface]"> M<sup>2</sup>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
                             @endforeach
+                            {!! BootForm::submit('Opslaan') !!}
                         {!! BootForm::close() !!}
                     </div>
                 </div>
             </div>
         </div>
     </div>
+@endsection
+
+@section('scripts')
+    <script src="/js/rooms/edit.js"></script>
 @endsection

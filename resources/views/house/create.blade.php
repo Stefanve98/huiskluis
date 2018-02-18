@@ -19,12 +19,15 @@
 
                             <div class="col-lg-12 image-header mb-5"></div>
 
-                            <div class="col-lg-6">
-                                {!! BootForm::text('Zip code', 'address[zip_code]') !!}
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    {!! BootForm::text('Zip code', 'address[zip_code]') !!}
+                                </div>
+                                <div class="col-lg-6">
+                                    {!! BootForm::text('City', 'address[city]') !!}
+                                </div>
                             </div>
-                            <div class="col-lg-6">
-                                {!! BootForm::text('City', 'address[city]') !!}
-                            </div>
+
                             <div class="col-lg-6">
                                 {!! BootForm::text('Street', 'address[street]') !!}
                             </div>
@@ -34,6 +37,12 @@
                             <div class="col-lg-3">
                                 {!! BootForm::text('Additional', 'address[additional]') !!}
                             </div>
+
+                            <div class="col-lg-3">
+                                {!! BootForm::text('from', 'address[owner_from]', null)->class('form-control datepicker') !!}
+                                {{--<p>Date: <input type="text" class="datepicker"></p>--}}
+                            </div>
+
                             {!! BootForm::submit('Opslaan') !!}
 
                         {!! BootForm::close() !!}

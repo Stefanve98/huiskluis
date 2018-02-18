@@ -6,6 +6,8 @@
 
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <script src="{{ mix('js/app.js') }}"></script>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     </head>
 
     <body>

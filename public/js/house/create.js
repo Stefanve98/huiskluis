@@ -1,4 +1,6 @@
 $(document).ready(function() {
+    $( ".datepicker" ).datepicker({dateFormat: 'dd-mm-yy'});
+
     $('input').on('change', function () {
         var street = $('input[name="address[street]"]').val();
         var number = $('input[name="address[number]"]').val();

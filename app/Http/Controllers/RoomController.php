@@ -30,6 +30,10 @@ class RoomController extends BaseController
      */
     public function update(Request $request, int $houseId): RedirectResponse
     {
+        foreach ($request->get('roomType') as $roomType) {
+            dd($roomType);
+        }
+
         return redirect()->route('house.view', $houseId);
     }
 }
