@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\House\Address;
 use App\Models\House\House;
+use Carbon\Carbon;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -51,7 +52,9 @@ class HouseController extends BaseController
         $address = Address::create($request->get('address'));
         $house = House::create([
             'user_id' => $request->user()->id,
-            'address_id' => $address->id
+            'address_id' => $address->id,
+            'owner_from' => $request->owner_from ? Carbon::parse($request->owner_from)->format('Y-m-d') : null,
+            'owner_until' => $request->owner_until ? Carbon::parse($request->owner_until)->format('Y-m-d') : null
         ]);
 
         return redirect()->route('house.view', $house->id);

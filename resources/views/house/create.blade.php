@@ -8,9 +8,9 @@
         ]
     ])
 
-    <div class="container mt-5">
+    <div class="mt-5">
         <div class="row justify-content-center">
-            <div class="col-md-10">
+            <div class="col-lg-8">
                 <div class="card card-default">
                     <div class="card-header">Add a house</div>
 
@@ -19,13 +19,12 @@
 
                             <div class="col-lg-12 image-header mb-5"></div>
 
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    {!! BootForm::text('Zip code', 'address[zip_code]') !!}
-                                </div>
-                                <div class="col-lg-6">
-                                    {!! BootForm::text('City', 'address[city]') !!}
-                                </div>
+                            <div class="col-lg-6">
+                                {!! BootForm::text('Zip code', 'address[zip_code]') !!}
+                            </div>
+
+                            <div class="col-lg-6">
+                                {!! BootForm::text('City', 'address[city]') !!}
                             </div>
 
                             <div class="col-lg-6">
@@ -39,11 +38,16 @@
                             </div>
 
                             <div class="col-lg-3">
-                                {!! BootForm::text('from', 'address[owner_from]', null)->class('form-control datepicker') !!}
-                                {{--<p>Date: <input type="text" class="datepicker"></p>--}}
+                                {!! BootForm::text('Owner from', 'owner_from', null)->class('form-control datepicker') !!}
                             </div>
 
-                            {!! BootForm::submit('Opslaan') !!}
+                            <div class="col-lg-3">
+                                {!! BootForm::text('Owner until', 'owner_until', null)->class('form-control datepicker') !!}
+                            </div>
+
+                            <div class="col-lg-12">
+                                <button type="submit" class="btn btn-primary pull-right">Opslaan</button>
+                            </div>
 
                         {!! BootForm::close() !!}
                     </div>

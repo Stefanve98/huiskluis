@@ -17,7 +17,7 @@
         <!-- Left Panel -->
 
         <!-- Right Panel -->
-        <div id="right-panel" class="right-panel">
+        <div id="app right-panel" class="right-panel">
 
             <!-- Header-->
             @include('layout.header')

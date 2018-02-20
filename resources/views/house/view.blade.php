@@ -9,8 +9,8 @@
         ]
     ])
 
-    <div class="container mt-4">
-        <div class="col-xs-6 col-sm-6">
+    <div class="mt-4">
+        <div class="col-lg-6">
             <div class="card">
                 <div class="card-header">
                     <strong>House</strong>
@@ -24,7 +24,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-xs-6 col-sm-6">
+        <div class="col-lg-6">
             <div class="card">
                 <div class="card-header">
                     <strong>Rooms</strong>
@@ -37,7 +37,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-xs-6 col-sm-6">
+        <div class="col-lg-6">
             <div class="card">
                 <div class="card-header">
                     <strong>Notes</strong>

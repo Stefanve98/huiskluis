@@ -22,6 +22,8 @@ class House extends Model
     protected $fillable = [
         'user_id',
         'address_id',
+        'owner_from',
+        'owner_until',
     ];
 
     /**
