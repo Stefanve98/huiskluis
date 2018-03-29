@@ -16,22 +16,14 @@
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
-                        <div class="form-group">
-                            <label>Name</label>
-                            <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="Name" name="name" value="{{ old('name') }}" required autofocus>
-                        </div>
-                        <div class="form-group">
-                            <label>Email address</label>
-                            <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="Email" name="email" value="{{ old('email') }}" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Password</label>
-                            <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="Password" name="password" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Repeat password</label>
-                            <input id="password-confirm" type="password" class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" name="password_confirmation" required>
-                        </div>
+                        {!! BootForm::text('name', 'Naam') !!}
+
+                        {!! BootForm::email('email', 'Email address') !!}
+
+                        {!! BootForm::password('password', 'Wachtwoord') !!}
+
+                        {!! BootForm::password('password_confirmation', 'Herhaal wachtwoord') !!}
+
                         <div class="checkbox">
                             <label>
                                 <input type="checkbox"> Agree the terms and policy

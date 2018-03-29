@@ -16219,3 +16219,15 @@ a.text-dark:focus {
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
+.has-error label {
+  color: red;
+}
+
+.has-error input {
+  border: 1px solid red;
+}
+
+.has-error .help-block {
+  color: red;
+}
+

@@ -3,6 +3,7 @@
 namespace App\Models\Rooms;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Type extends Model
 {
@@ -19,4 +20,12 @@ class Type extends Model
         'name',
         'description',
     ];
+
+    /**
+     * @return HasMany
+     */
+    public function rooms(): HasMany
+    {
+        return $this->hasMany(Rooms::class, 'type_id', 'id');
+    }
 }

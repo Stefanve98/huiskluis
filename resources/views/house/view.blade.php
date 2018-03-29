@@ -4,7 +4,6 @@
 
     @include('element.breadcrumbs', [
         'crumbs' => [
-            ['url' => route('house.index'), 'name' => 'Houses'],
             ['name' => 'view'],
         ]
     ])
@@ -13,13 +12,12 @@
         <div class="col-lg-6">
             <div class="card">
                 <div class="card-header">
-                    <strong>House</strong>
+                    <strong>Huis</strong>
                     <a href="{{ route('house.edit', $house->id) }}" class="btn btn-sm btn-info pull-right">
                         <i class="fa fa-edit"></i> Bewerken
                     </a>
                 </div>
                 <div class="card-body card-block">
-{{--                    {{ dd($house->toArray()) }}--}}
                     House info
                 </div>
             </div>
@@ -27,7 +25,7 @@
         <div class="col-lg-6">
             <div class="card">
                 <div class="card-header">
-                    <strong>Rooms</strong>
+                    <strong>Kamers</strong>
                     <a href="{{ route('house.rooms.edit', $house->id) }}" class="btn btn-sm btn-info pull-right">
                         <i class="fa fa-edit"></i> Bewerken
                     </a>
@@ -40,7 +38,7 @@
         <div class="col-lg-6">
             <div class="card">
                 <div class="card-header">
-                    <strong>Notes</strong>
+                    <strong>Notities</strong>
                     <a href="{{ route('house.view', $house->id) }}" class="btn btn-sm btn-info pull-right">
                         <i class="fa fa-edit"></i> Bewerken
                     </a>
@@ -50,7 +48,21 @@
                 </div>
             </div>
         </div>
-{{--        {{ dd($house->toArray()) }}--}}
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <strong>Bewoners</strong>
+                    <button type="button" class="btn btn-sm btn-info pull-right" data-toggle="modal" data-target="#exampleModalLong">
+                        <i class="fa fa-plus"></i> Bewoner inviten
+
+                    </button>
+                </div>
+                <div class="card-body card-block">
+                    Notes
+                </div>
+            </div>
+        </div>
     </div>
 
+    @include('user.add-user-modal')
 @endsection
